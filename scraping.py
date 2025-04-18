@@ -76,7 +76,6 @@ for an in ani:
         print(f" Eroare la anul {an}: {e}")
 
 
-
 dfs = []
 
 for an in ani:
