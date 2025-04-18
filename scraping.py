@@ -38,7 +38,7 @@ data = requests.get(url)
 with open("mvp/2024.html", "w+", encoding="utf-8") as f:
     f.write(data.text)
     page = data.text
-soup = BeautifulSoup(page, "html.parser")#creaza parser class ca sa extragem tabeulul din pagina
+soup = BeautifulSoup(page, "html.parser")#creaza parser class ca sa extragem tabelul din pagina
 
 #citire si prelucrare fișiere HTML
 dfs = []
