@@ -114,4 +114,3 @@ mvps.to_csv("mvps.csv")
 #intr-un singur dataframe
 df_final = pd.concat(dfs, ignore_index=True)
 print(df_final.head())
-print("test")
