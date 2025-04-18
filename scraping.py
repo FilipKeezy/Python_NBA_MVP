@@ -10,35 +10,35 @@ ani = list(range(1980, 2025))
 
 
 #web scraping. ia fisierele html
-#for an in ani:
- #   url = f"https://www.basketball-reference.com/awards/awards_{an}.html"
-  #  print(f"Fetch la datele din {an}...")
-#
- #   try:
-  #      response = requests.get(url)
-   #     response.raise_for_status()  # arunca exceptie daca nu poate accesa
-#
- #       with open(f"mvp/{an}.html", "w+", encoding="utf-8") as f:
-  #          f.write(response.text)
-#
- #       print(f"A salvat html {an}.\n")
-  #      time.sleep(30)
-#
- #   except requests.RequestException as e:
-  #      print(f"Nu a salvat html pt {an}: {e}")
+for an in ani:
+    url = f"https://www.basketball-reference.com/awards/awards_{an}.html"
+    print(f"Fetch la datele din {an}...")
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # arunca exceptie daca nu poate accesa
+
+        with open(f"mvp/{an}.html", "w+", encoding="utf-8") as f:
+            f.write(response.text)
+
+        print(f"A salvat html {an}.\n")
+        time.sleep(30)
+
+    except requests.RequestException as e:
+        print(f"Nu a salvat html pt {an}: {e}")
 
 
 
 #pt an individual
-#import requests
-#
-#url = "https://www.basketball-reference.com/awards/awards_2024.html"
-#data = requests.get(url)
-#
-#with open("mvp/2024.html", "w+", encoding="utf-8") as f:
-#    f.write(data.text)
+import requests
 
-#soup = BeautifulSoup(page, "html.parser")#creaza parser class ca sa extragem tableul din pagina
+url = "https://www.basketball-reference.com/awards/awards_2024.html"
+data = requests.get(url)
+
+with open("mvp/2024.html", "w+", encoding="utf-8") as f:
+    f.write(data.text)
+    page = data.text
+soup = BeautifulSoup(page, "html.parser")#creaza parser class ca sa extragem tableul din pagina
 
 #citire si prelucrare fișiere HTML
 dfs = []
